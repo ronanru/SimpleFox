@@ -1,17 +1,19 @@
-/* 
+/*
 ┌─┐┬┌┬┐┌─┐┬  ┌─┐
-└─┐││││├─┘│  ├┤ 
+└─┐││││├─┘│  ├┤
 └─┘┴┴ ┴┴  ┴─┘└─┘
-┌─┐┌─┐─┐ ┬      
-├┤ │ │┌┴┬┘      
+┌─┐┌─┐─┐ ┬
+├┤ │ │┌┴┬┘
 └  └─┘┴ └─
 
 by Miguel Avila
 
+RonanRU's fork
+
 */
 
 /*
- 
+
 ┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
 │  │ ││││├┤ ││ ┬│ │├┬┘├─┤ │ ││ ││││
 └─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
@@ -19,8 +21,8 @@ by Miguel Avila
 */
 
 :root {
-  --sfwindow: #19171a;
-  --sfsecondary: #201e21;
+  --sfwindow: #121212;
+  --sfsecondary: #272727;
 }
 
 /* Urlbar View */
@@ -36,23 +38,15 @@ by Miguel Avila
 
 /*─────────────────────────────*/
 
-/* 
+/*
 ┌─┐┌─┐┬  ┌─┐┬─┐┌─┐
 │  │ ││  │ │├┬┘└─┐
-└─┘└─┘┴─┘└─┘┴└─└─┘ 
+└─┘└─┘┴─┘└─┘┴└─└─┘
 */
 
 /* Tabs colors  */
-#tabbrowser-tabs:not([movingtab])
-  > #tabbrowser-arrowscrollbox
-  > .tabbrowser-tab
-  > .tab-stack
-  > .tab-background[multiselected='true'],
-#tabbrowser-tabs:not([movingtab])
-  > #tabbrowser-arrowscrollbox
-  > .tabbrowser-tab
-  > .tab-stack
-  > .tab-background[selected='true'] {
+#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected='true'],
+#tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected='true'] {
   background-image: none !important;
   background-color: var(--toolbar-bgcolor) !important;
 }
@@ -76,33 +70,22 @@ by Miguel Avila
   background-color: var(--sfwindow) !important;
 }
 
-/* 
+/*
 
-┌┬┐┌─┐┬  ┌─┐┌┬┐┌─┐            
- ││├┤ │  ├┤  │ ├┤             
-─┴┘└─┘┴─┘└─┘ ┴ └─┘            
+┌┬┐┌─┐┬  ┌─┐┌┬┐┌─┐
+ ││├┤ │  ├┤  │ ├┤
+─┴┘└─┘┴─┘└─┘ ┴ └─┘
 ┌─┐┌─┐┌┬┐┌─┐┌─┐┌┐┌┌─┐┌┐┌┌┬┐┌─┐
 │  │ ││││├─┘│ ││││├┤ │││ │ └─┐
 └─┘└─┘┴ ┴┴  └─┘┘└┘└─┘┘└┘ ┴ └─┘
 
 */
 
-/* Tabs elements  */
-.tab-close-button {
-  display: none;
-}
-
-.tabbrowser-tab:not([pinned]) .tab-icon-image {
-  display: none !important;
-}
-
 #nav-bar:not([tabs-hidden='true']) {
   box-shadow: none;
 }
 
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
-  > #tabbrowser-arrowscrollbox
-  > .tabbrowser-tab[first-visible-unpinned-tab] {
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
   margin-inline-start: 0 !important;
 }
 
@@ -117,9 +100,7 @@ by Miguel Avila
   margin-left: -4px !important;
 }
 
-.tabbrowser-tab:is([visuallyselected='true'], [multiselected])
-  > .tab-stack
-  > .tab-background {
+.tabbrowser-tab:is([visuallyselected='true'], [multiselected]) > .tab-stack > .tab-background {
   box-shadow: none !important;
 }
 
@@ -139,6 +120,7 @@ by Miguel Avila
 
 #urlbar-container {
   margin-left: 0 !important;
+  text-align: center;
 }
 
 #urlbar[focused='true'] > #urlbar-background {
@@ -163,43 +145,14 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 #star-button-box,
 #pageActionButton,
 #pageActionSeparator,
-#tabs-newtab-button,
-#back-button,
 #PanelUI-button,
 #forward-button,
+#identity-box,
+#page-action-buttons,
 .tab-secondary-label {
   display: none !important;
 }
 
 .urlbarView-url {
   color: #dedede !important;
-}
-
-/* Disable elements  */
-#context-navigation,
-#context-savepage,
-#context-pocket,
-#context-sendpagetodevice,
-#context-selectall,
-#context-viewsource,
-#context-inspect-a11y,
-#context-sendlinktodevice,
-#context-openlinkinusercontext-menu,
-#context-bookmarklink,
-#context-savelink,
-#context-savelinktopocket,
-#context-sendlinktodevice,
-#context-searchselect,
-#context-sendimage,
-#context-print-selection {
-  display: none !important;
-}
-
-#context_bookmarkTab,
-#context_moveTabOptions,
-#context_sendTabToDevice,
-#context_reopenInContainer,
-#context_selectAllTabs,
-#context_closeTabOptions {
-  display: none !important;
 }
